@@ -1,0 +1,435 @@
+
+
+
+
+//################################################################################
+//## logo-navbar
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.file-picker.logo-navbar-row {
+    width: 100%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.file-picker.logo-row {
+    width: 60%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    padding: 0px 12px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.file-picker.large-navbar {
+    width: 40%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    //padding: 0px 12px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+//################################################################################
+//## Top Row
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+div.file-picker.dummy-logo {
+    height: 80px;
+    width: 80px;
+
+    border: 2px solid green;
+}
+
+.file-picker.overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    height: 100dvh;
+    width: 100dvw;
+
+    padding-top: calc(var(--logo-row-height)*0.8);
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+
+
+.file-picker.overlay.hidden {
+    display: none;
+}
+
+.file-picker.file-picker-area {
+    min-height: 370px;
+    height: 100dvh;
+    min-width: 400px;
+    width: 80%;
+    max-width: 700px;
+
+    border-style: ridge groove groove ridge;
+    border-color: grey;
+    border-width: 8px;
+    border-radius: 8px;
+}
+
+.file-picker.top-row {
+    height: 100px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0px 5%;
+}
+
+.file-picker.current-position-container {
+    //height: 80%;
+    height: max-content;
+    min-width: 200px;
+    width: max-content;
+
+    overflow: visible;
+}
+
+.file-picker.current-position-filesystem-container {
+    height: max-content;
+    width: max-content;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.file-picker.file-system-combobox-anchor-container {
+    min-width: 30ch;
+    min-height: 2em;
+    position: relative;
+}
+
+.file-picker.current-position-popup.container {
+    min-height: 2em;
+    max-height: 16em;
+    min-width: 30ch;
+    min-height: 2em;
+    height: max-content;
+    width: max-content;
+    overflow-y: auto;
+
+    padding: 0px 10px;
+
+    position: absolute;
+    z-index: 20;
+}
+
+.file-picker.file-system-title { }
+
+.file-picker.file-system-title.selected { }
+
+.file-picker.current-position-filesystem-title { }
+
+.file-picker.current-filesystem-name-container {
+    //width: 100%;
+    min-height: 2em;
+    min-width: 30ch;
+    padding: 0px 8px;
+}
+
+.file-picker.choose-filesystem-icon-container {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+.file-picker.choose-filesystem-icon{
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+.file-picker.current-position-widget-directory {
+    position: relative;
+    min-height: 2em;
+    min-width: 20ch;
+    max-width: 38ch;
+}
+
+.file-picker.current-position-widget-directory.clipped {
+    position: relative;
+    min-height: 2em;
+    max-height: 2em;
+    min-width: 20ch;
+    max-width: 38ch;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.file-picker.current-position-last-path.component {
+    position: relative;
+    min-height: 2em;
+    max-height: 2em;
+    min-width: 20ch;
+    max-width: 38ch;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.file-picker.current-position-widget-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.file-picker.current-position-go-back-button-container { }
+
+.file-picker.current-position-go-back-button {
+    border-radius: 4px;
+}
+
+.file-picker.current-position-go-forward-button-container { }
+
+.file-picker.current-position-go-forward-button {
+    border-radius: 4px;
+}
+
+.file-picker.current-position-ascend-directory-button-container { }
+
+.file-picker.current-position-ascend-directory-button {
+    border-radius: 4px;
+}
+
+.file-picker.current-position-reload-directory-button-container { }
+
+.file-picker.current-position-reload-directory-button {
+    border-radius: 4px;
+}
+
+.file-picker.current-position-full-path-anchor-container {
+    width: 38ch;
+    max-width: 38ch;
+    height: 2em;
+    max-height: 2em;
+
+    position: relative;
+}
+
+.file-picker.current-position-full-path {
+    width: max-content;
+    max-width: 38ch;
+    height: max-content;
+    max-height: 16ch;
+
+    overflow: visible;
+    overflow-y: auto;
+    white-space: normal;
+    text-overflow: clip;
+
+    position: absolute;
+    z-index: 10;
+}
+
+.file-picker.choose-layout-icon {
+    //height: 80px;
+    //width: 80px;
+}
+
+//################################################################################
+//## File/Directory Display area
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.file-picker.display-area-overflow-parent {
+    //height: calc(80dvh - var(--logo-row-height) - 100px - 100px);
+    height: calc(100% - 100px);
+    width: 100%;
+}
+
+.file-picker.display-area {
+    //height: calc(80dvh - var(--logo-row-height) - 100px - 100px);
+    height: calc(100% - 60px);
+    //height: 100dvh;
+    //height: calc(100dvh - var(--logo-row-height) - 100px)
+    //height: auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 2rem;
+
+    overflow-y: auto;
+}
+
+div.file-picker.separator {
+    height: 0px;
+    width: 80%;
+
+    align-self: center;
+
+    border: 2px solid black;
+}
+
+.file-picker.filtered-file-area {
+    height: auto;
+    width: 100%;
+
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    //grid-template-rows: 100px;
+    gap: 1rem;
+    padding: 5px 5%;
+
+    //overflow: auto;
+}
+
+.background-green { }
+
+.file-picker.directory-area {
+    height: auto;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    //grid-template-rows: 100px;
+    gap: 1rem;
+    padding: 5px 5%;
+
+    background: white;
+
+    //overflow: auto;
+}
+
+.file-picker.other-file-area {
+    height: auto;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    //grid-template-rows: 100px;
+    gap: 1rem;
+    padding: 5px 5%;
+
+    //overflow: auto;
+}
+
+
+div.file-picker.dummy-logo {
+    height: 80px;
+    width: 80px;
+
+    border: 2px solid green;
+}
+
+
+
+div.file-picker {
+    border: 2px solid purple;
+}
+
+
+.directory-widget.unmarked { }
+
+.directory-widget.marked { }
+
+.file-widget.unmarked { }
+
+.file-widget.marked { }
+
+.file-picker.directory-widget.container {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+}
+.file-picker.directory-widget.icon-container.unmarked {
+    height: 100%;
+    width: 100%;
+}
+
+.file-picker.directory-widget.icon-container.shrunk {
+    height: 100%;
+    width: 68%;
+}
+
+.directory-widget.descend-icon-area {
+    height: 100%;
+    width: 32%;
+
+    position: absolute;
+    top: 0px;
+    left: 68%;
+    z-index: 10;
+}
+
+.directory-widget.name {
+    word-break: break-all;
+}
+
+
+//################################################################################
+//## Confirm/Cancel buttons
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.file-picker.confirm-cancel-button-container {
+    height: 60px;
+    width: 100%;
+
+    padding: 8px 8px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.file-picker.confirm-selection-button.primary-button {}
+
+.file-picker.cancel-selection-button { }
+

@@ -1,0 +1,238 @@
+
+
+
+.primary-button {
+    //background: #ddd;
+    padding: 0.5em;
+    border-radius: 1em;
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+}
+
+.quad-button {
+    padding: 0.5em;
+    border-radius: 0.3em;
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+}
+
+.disabled-button {
+    //background: #aaa;
+    color: #999;
+    cursor: not-allowed;
+    backdrop-filter: blur(8px);
+}
+
+.mini-icon {
+    background: inherit;
+    color: #44d;
+    cursor: pointer;
+
+    height: 20px;
+    width: 20px;
+    min-height: 32px;
+    min-width: 32px;
+
+    diplay: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-icon {
+    background: inherit;
+    color: #44d;
+    cursor: pointer;
+
+    height: 32px;
+    width: 32px;
+    min-height: 32px;
+    min-width: 32px;
+
+    diplay: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.medium-icon {
+    background: inherit;
+    color: #44d;
+    cursor: pointer;
+
+    height: 40px;
+    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+
+    diplay: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.large-icon {
+    background: inherit;
+    color: #44d;
+    cursor: pointer;
+
+    height: 64px;
+    width: 64px;
+    min-height: 64px;
+    min-width: 64px;
+
+    diplay: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-background {
+    background: black;
+}
+
+.small-logo {
+
+}
+
+.medium-logo {
+
+}
+
+.large-logo {
+
+}
+
+
+//################################################################################
+//## logo-navbar row and elements
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.logo-navbar-row {
+    width: 100%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-row:not(.entry-page) {
+    width: 60%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    padding: 0px 12px;
+    gap: 5px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.navbar-logo {
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+}
+
+.large-navbar {
+    width: 40%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    padding: 5px 12px;
+    gap: 5px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+
+.flexible-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable-disabled {
+    cursor: not-allowed;
+}
+
+.unclickable {
+    cursor: default;
+}
+
+li {
+    display: block;
+}
+
+
+//body::-webkit-scrollbar {
+//  width: 1em;
+//}
+//
+//body::-webkit-scrollbar-track {
+//  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+//    border-radius: 10px;
+//}
+//
+//body::-webkit-scrollbar-thumb {
+//  background-color: darkgrey;
+//  outline: 1px solid slategrey;
+//  border-radius: 10px;
+//  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+//}
+
+
+
+.pseudo-element {
+    //display: none;
+    height: 40px;
+    width: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+//@keyframes example {
+//  from {background-color: red;}
+//  to {background-color: yellow;}
+//}
+//
+//
+//@keyframes rotation {
+//    from: { transform: rotate(0deg); background: red; }
+//    to: { transform: rotate(360deg); background: blue; }
+//}
+//
+//.rotating {
+//    animation: rotation 1.5s linear 0s infinite normal forwards;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

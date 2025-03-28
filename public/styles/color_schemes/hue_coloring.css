@@ -1,0 +1,240 @@
+
+
+
+:root {
+  --hue: 120; /* Let's try a different hue this time */
+  --hueComplement: calc(var(--hue) + 140);
+  --hueRightAnalogous: calc(var(--hue) + 30);
+  --hueLeftAnalogous: calc(var(--hue) - 30);
+
+  --primaryDark500: hsl(var(--hue) 50% 20%);
+  --primaryDark600: hsl(var(--hue) 50% 35%);
+  --secondaryLight500: hsl(var(--hueComplement) 35% 40%);
+  --secondaryLight900: hsl(var(--hueComplement) 35% 65%);
+
+  --accentV1: hsl(var(--hueRightAnalogous) 70% 40%);
+  --accentV1Light500: hsl(var(--hueRightAnalogous) 55% 60%);
+  --accentV1Light900: hsl(var(--hueRightAnalogous) 55% 80%);
+  //--accentV1Light900: color-mix(in hsl, var(--accentV1) 20%, white 80%);
+  --accentV2: hsl(var(--hueLeftAnalogous) 70% 40%);
+  --accentV2Light500: hsl(var(--hueLeftAnalogous) 55% 60%);
+  --accentV2Light900: hsl(var(--hueLeftAnalogous) 55% 80%);
+  //--accentV2Light900: color-mix(in hsl, var(--accentV2) 20%, white 80%);
+
+  --back-main: var(--primaryDark500);
+  --back-second: var(--primaryDark600);
+  --text-title: black;
+  --text-block: black;
+  --icon: var(--accentV1Light900);
+  --icon-dark: var(--accentV1Light500);
+}
+
+
+//################################################################################
+//## included when feature clrHue is active
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: var(--primaryDark500);
+}
+
+body {
+    background: var(--primaryDark500);
+}
+.background { }
+
+.main-columns {
+    background: var(--primaryDark500);
+}
+
+//################################################################################
+//## presentation login column
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.presentation-login-column {
+}
+
+.logo-row {
+    background: var(--accentV2);
+}
+
+.presentation-background-logo {
+    background: var(--primaryDark500);
+}
+
+
+.login-column {
+    background: var(--primaryDark600);
+}
+
+.main-title { }
+
+.container-start-button { }
+
+//################################################################################
+//## message column - buggy, first class is not being applied
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.message-column {
+    background: var(--accentV1);
+}
+
+.message-column-header { }
+
+.message-container {
+    background: var(--accentV1Light900);
+}
+
+.message-ul {
+    background: none;
+}
+
+.message-li {
+    background: var(--accentV1Light500);
+}
+
+.message-li-selected {
+    background: var(--accentV2Light500);
+}
+
+
+div {
+    border: none;
+}
+
+
+//################################################################################
+//## installation page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.installation-background {
+    color: var(--primaryDark500);
+}
+
+.installation-header {
+    color: blue;
+}
+
+.installation-spinning-icon {
+    background: var(--primaryDark500);
+}
+
+.installation-progress {
+
+}
+
+//################################################################################
+//## local container page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.local-container-page.background {
+    background: var(--primaryDark500);
+}
+
+.local-container-page.logo-navbar-row {
+    background: var(--primaryDark500);
+}
+
+.local-container-page.logo-row {
+    background: var(--accentV1);
+}
+
+.local-container-page.large-navbar {
+    background: var(--accentV1);
+}
+
+.local-container-page.content-area {
+    background: var(--primaryDark500);
+}
+
+.local-container-page.overview-column {
+    background: var(--primaryDark600);
+}
+
+.local-container-page.description-card.container {
+    background: #111111;
+    color: white;
+}
+
+.local-container-page.argument-column {
+    background: var(--primaryDark600);
+}
+
+.local-container-page.button-column {
+    background: var(--primaryDark600);
+}
+
+//################################################################################
+//## utilities
+//################################################################################
+
+.unused {
+  background: white;
+}
+
+.primary-button {
+    background: var(--accentV1Light900);
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
+.disabled-button {
+    background: var(--accentV1Light500);
+    color: #999;
+    cursor: not-allowed;
+}
+
+.small-icon {
+    background: inherit;
+    color: var(--secondaryLight900);
+}
+
+
+.medium-icon {
+    background: inherit;
+    color: var(--secondaryLight900);
+}
+
+.large-icon {
+    background: inherit;
+    color: var(--secondaryLight900);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

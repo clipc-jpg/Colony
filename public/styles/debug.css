@@ -1,0 +1,195 @@
+
+
+
+
+//################################################################################
+//## included in debug mode
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+body {
+    background: pink;
+}
+.background { }
+
+.main-columns {
+    background: grey;
+}
+
+//################################################################################
+//## presentation login column
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.presentation-login-column {
+}
+
+.logo-row {
+    background: green;
+}
+
+.presentation-background-logo {
+    background: blue;
+}
+
+
+.login-column {
+    background: #DD2;
+}
+
+.main-title { }
+
+.container-start-button { }
+
+//################################################################################
+//## message column - buggy, first class is not being applied
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.message-column {
+    background: pink;
+}
+
+.message-column-header { }
+
+.message-container {
+    background: white;
+}
+
+.message-ul {
+    background: #6e6;
+}
+
+.message-li {
+    background: #ddf;
+}
+
+.message-li-selected {
+    background: #6e6;
+}
+
+.add-container-button {
+    margin-bottom: 5%;
+}
+
+
+div {
+    border: 2px solid red;
+}
+
+
+//################################################################################
+//## installation page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.installation-background {
+    color: purple;
+}
+
+.installation-header {
+    color: blue;
+}
+
+.installation-spinning-icon {
+    background: yellow;
+}
+
+.installation-progress {
+
+}
+
+//################################################################################
+//## local container page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.local-container-page.background {
+    background: pink;
+}
+
+.local-container-page.logo-navbar-row {
+    background: grey;
+}
+
+.local-container-page.logo-row {
+    background: green;
+}
+
+.local-container-page.large-navbar {
+    background: #8888ee;
+}
+
+.local-container-page.content-area {
+    background: #aaaa2d;
+}
+
+.local-container-page.overview-column {
+    background: #dd222d;
+}
+
+.local-container-page.description-card.container {
+    background: #111111;
+    color: white;
+}
+
+.local-container-page.argument-column {
+    background: #22dd2d;
+}
+
+.local-container-page.button-column {
+    background: #66666d;
+}
+
+
+
+//################################################################################
+//## utilities
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.primary-button {
+    background: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

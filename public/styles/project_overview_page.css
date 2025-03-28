@@ -1,0 +1,401 @@
+
+
+//################################################################################
+//## Logo-Navbar
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.project-overview-page.logo-navbar-row {
+    width: 100%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-overview-page.logo-row {
+    width: 60%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    padding: 0px 12px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.project-overview-page.large-navbar {
+    width: 40%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    //padding: 0px 12px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+//################################################################################
+//## General Page Layout
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+div.project-overview-page {
+    border: 2px solid purple;
+}
+
+.project-overview-page.content-area {
+    background: cyan;
+
+    height: calc(var(--content-area-height) - 10px);
+    width: 100%;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+
+.project-overview-page.content-selection-column {
+    background: pink;
+
+    height: 100%;
+    min-width: max-content;
+    width: 24%;
+
+    padding: 4rem 0.5rem 2rem 0.5rem;
+}
+
+.project-overview-page.content-selection-list {
+    background: #FFA500; //Orange
+
+    height: 100%;
+    min-width: max-content;
+    width: 86%;
+    max-width: 40ch;
+}
+
+
+.project-overview-page.content-type-list-entry {
+    background: lightgrey;
+
+    min-height: 2.5em;
+    min-width: max-content;
+    width: 100%;
+    max-width: inherit;
+
+    padding: 0.5rem;
+}
+
+.project-overview-page.content-type-list-entry.selected {
+    background: grey;
+}
+
+.project-overview-page.content-type-title {
+    word-break: break-all;
+}
+
+
+
+//################################################################################
+//## Project List
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.project-overview-page.project-list {
+    background: green;
+
+    min-height: 6em;
+    max-height: 100%;
+    height: 100%;
+    min-width: 40ch;
+    width: 76%;
+    max-width: 76%;
+
+    padding: 1.5rem 0rem 0rem 0rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 0.75rem;
+
+    overflow-y: auto;
+}
+
+
+.project-overview-page.project-widget-container {
+    background: #8B0000; //DarkRed
+
+    min-height: 2.5em;
+    height: max-content;
+    min-width: 40ch;
+    width: 100%;
+
+    padding: 0rem 0.5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    gap: 4px;
+}
+
+//.project-overview-page.project-widget-delete-button-container {
+//    background: #008B8B; //DarkCyan
+//
+//    height: max-content;
+//    width: 100%;
+//
+//    display: hidden;
+//    //display: flex;
+//    flex-direction: row;
+//    justify-content: flex-end;
+//    align-items: center;
+//}
+
+.project-overview-page.project-widget-delete-button {
+    background: inherit;
+    color: black;
+}
+
+.project-overview-page.project-widget-title-description-container {
+    background: #BA55D3; //MediumOrchid
+
+    height: max-content;
+    min-height: 2.5rem;
+    width: 100%;
+
+    padding: 10px 1rem 10px 0.25rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 3.5rem;
+}
+
+.project-overview-page.project-widget-title-container {
+    background: #DB7093; //PaleVioletRed
+
+    margin-top: 10px;
+
+    height: max-content;
+    min-height: inherit;
+    width: 20ch;
+    min-width: 20ch;
+    max-width: 20ch;
+}
+
+.project-overview-page.project-widget-title { }
+
+.project-overview-page.project-widget-description-container {
+    background: #DDA0DD; //Plum
+
+    margin-top:10px;
+
+    height: max-content;
+    min-height: 2.5rem;
+    max-height: 12rem;
+    width: 100%;
+    //max-width: 72ch;
+    max-width: 40rem;
+
+    padding: 0rem 1rem;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+//################################################################################
+//## Container Overview
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.project-overview-page.container-overview {
+    background: pink;
+
+    min-height: 6em;
+    max-height: 100%;
+    height: 100%;
+    min-width: max-content;
+    width: 76%;
+    max-width: 76%;
+
+    padding: 1rem 2rem;
+
+
+}
+
+.project-overview-page.container-overview-box-aligner {
+    background: #98FB98; //PaleGreen
+
+    min-height: max-content;
+    max-height: inherit;
+    min-width: max-content;
+    max-width: inherit;
+    height: max-content;
+    width: max-content;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    gap: 1rem;
+}
+
+.project-overview-page.container-selection-column {
+    background: #F5FFFA; //MintCream
+
+    unused: 0%;
+
+    min-height: 100%
+    height: 100%;
+    max-height: 100%;
+    min-width: 20ch;
+    width: 100%;
+    max-width: 48rem;
+
+    padding: 0.5rem 0.25rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    overflow-y: auto;
+}
+
+.project-overview-page.container-selection-column-title-container-area {
+    background: #F5F5DC; //Beige
+}
+
+.project-overview-page.container-selection-column-title { }
+
+.project-overview-page.container-selection-column-container-area {
+    background: #DB7093; //PaleVioletRed
+
+    min-height: max-content;
+
+    margin-top:   0.5rem;
+    padding-left: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 0.75rem;
+}
+
+.project-overview-page.experiment-selection-column {
+    background: #FFFAFA; //Snow
+
+    unused: 0%;
+
+    min-height: 100%
+    height: 100%;
+    max-height: 100%;
+    min-width: 20ch;
+    width: 100%;
+    max-width: 48rem;
+
+    padding: 0.5rem 0.25rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    overflow-y: auto;
+}
+
+.project-overview-page.experiment-selection-column-title-container-area {
+    background: #FFA500; //Orange
+}
+
+.project-overview-page.experiment-selection-column-title { }
+
+.project-overview-page.experiment-selection-column-container-area {
+    background: #A9A9A9; //DarkGray
+
+    min-height: max-content;
+
+    margin-top:   0.5rem;
+    padding-left: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 0.75rem;
+}
+
+.project-overview-page.container-widget {
+    background: #66CDAA; //MediumAquaMarine
+    margin-left: 1.5rem;
+}
+
+.project-overview-page.container-widget.selected {
+    background: #93FFE8; //LightAquaMarine
+    margin-left: 1.5rem;
+}
+
+.project-overview-page.experiment-widget {
+    background: #66CDAA; //MediumAquaMarine
+    margin-left: 1.5rem;
+}
+
+.project-overview-page.experiment-widget.selected {
+    background: #93FFE8; //LightAquaMarine
+    margin-left: 1.5rem;
+}
+
+.project-overview-page.add-container-button.primary-button {
+    margin-top: 1rem;
+    justify-self: flex-end;
+    align-self: center;
+}
+
+.project-overview-page.new-experiment-button.primary-button {
+    margin-top: 1rem;
+    justify-self: flex-end;
+    align-self: center;
+}
+
+.project-overview-page.inspect-experiment-button.primary-button {
+    margin-top: 1rem;
+    justify-self: flex-end;
+    align-self: center;
+}

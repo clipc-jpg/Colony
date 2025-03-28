@@ -1,0 +1,219 @@
+
+
+:root {
+  // from IMI: --background-light: #141414;
+  --background-dark: #141414;
+  --background-light: #3B3B3B;
+  --text-hmain: #00458b;
+  --text-hsub: #3fd2c7;
+  --accent: #99DDFF;
+  --accent-dark: #77BBDD;
+
+  --back-main: #141414;
+  --back-second: #3B3B3B;
+  --icon: #99DDFF;
+  --icon-dark: #77BBDD;
+}
+
+//################################################################################
+//## included when feature clrHue is active
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: var(--background-light);
+}
+
+body {
+    background: var(--background-dark);
+}
+.background { }
+
+.main-columns {
+    background: var(--background-light);
+}
+
+//################################################################################
+//## presentation login column
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.presentation-login-column {
+}
+
+.logo-row {
+    background: var(--accent-dark);
+}
+
+.presentation-background-logo {
+    background: var(--background-light);
+}
+
+
+.login-column {
+    background: var(--background-light);
+}
+
+.main-title { }
+
+.container-start-button { }
+
+//################################################################################
+//## message column - buggy, first class is not being applied
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.message-column {
+    background: var(--accent);
+}
+
+.message-column-header {
+  color: var(--text-hmain);
+}
+
+.message-container {
+    background: var(--background-light);
+}
+
+.message-ul {
+    background: none;
+}
+
+.message-li {
+    background: var(--accent);
+}
+
+.message-li-selected {
+    background: var(--accent-dark);
+}
+
+
+div {
+    border: none;
+}
+
+
+//################################################################################
+//## installation page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.installation-background {
+    color: var(--background-light);
+}
+
+.installation-header {
+    color: var(--text-hmain);
+}
+
+.installation-spinning-icon {
+    background: var(--background-light);
+}
+
+.installation-progress {
+
+}
+
+//################################################################################
+//## local container page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.local-container-page.background {
+    background: var(--background-dark);
+}
+
+.local-container-page.logo-navbar-row {
+    background: var(--background-light);
+}
+
+.local-container-page.logo-row {
+    background: var(--background-light);
+}
+
+.local-container-page.large-navbar {
+    background: var(--background-light);
+}
+
+.local-container-page.content-area {
+    background: inherit;
+}
+
+.local-container-page.overview-column {
+    background: var(--background-light);
+}
+
+.local-container-page.description-card.container {
+    background: #111111;
+    color: white;
+}
+
+.local-container-page.argument-column {
+    background: var(--background-light);
+}
+
+.local-container-page.button-column {
+    background: var(--background-light);
+}
+
+//################################################################################
+//## utilities
+//################################################################################
+
+.unused {
+  background: white;
+}
+
+.primary-button {
+    background: var(--accent);
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
+.disabled-button {
+    background: var(--accent);
+    color: #999;
+    cursor: not-allowed;
+}
+
+.small-icon {
+    background: inherit;
+    color: var(--accent);
+}
+
+
+.medium-icon {
+    background: inherit;
+    color: var(--accent);
+}
+
+.large-icon {
+    background: inherit;
+    color: var(--accent);
+}
+
+
+
+
+
+
+
+
+

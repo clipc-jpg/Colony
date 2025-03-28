@@ -1,0 +1,79 @@
+
+
+
+//################################################################################
+//## logo-navbar
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.iframe.logo-navbar-row {
+    width: 100%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.iframe.logo-row {
+    width: 60%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    padding: 0px 12px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.iframe.large-navbar {
+    width: 40%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    //padding: 0px 12px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+//################################################################################
+//## iframe
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.iframe.frame {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

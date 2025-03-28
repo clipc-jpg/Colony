@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: calc(1em + 0.5rem);
+
+  user-select: inherit;
+}
+
+html {
+  scroll-behaviour: smooth;
+  user-select: none;
+  overflow: hidden;
+}
+
+body {
+  //font-family: 'Inter', sans-serif;
+  width: 100%
+}
+
+img, picture, video, canvas {
+  max-width: 100%;
+  display: block;
+}
+
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+
+:root {
+  --xs: 475px;
+  --sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
+  --xxl: 1536px;
+
+  --login-col-minw: 205px;
+  --message-col-minw: 300px;
+
+  --logo-row-height: 50px;
+  --min-logo-row-height: 50px;
+
+  --content-area-height: calc(100dvh - var(--logo-row-height) + 1px)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

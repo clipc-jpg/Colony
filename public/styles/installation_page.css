@@ -1,0 +1,64 @@
+
+
+
+
+
+.installation-background {
+    color: purple;
+    height: calc(100dvh - 5px);
+    height: var(--content-area-height);
+    height: 100dvh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    overflow: hidden;
+}
+
+.installation-header {
+    color: blue;
+    align-text: center;
+}
+
+button.installation-spinning-icon {
+    cursor: default;
+}
+
+.installation-progress {
+    height: 1.5em;
+}
+
+.installation-page.backend-output-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+
+    width: 60%;
+    max-width: 60%;
+    height: 10rem;
+    max-height: 10rem;
+
+    background: white;
+}
+
+.installation-page.backend-output {
+    color: black;
+    word-wrap: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

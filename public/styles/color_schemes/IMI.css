@@ -1,0 +1,269 @@
+
+:root {
+  --background-light: #141414;
+  --background-dark: #004a6f;
+
+  --text-dark: #333333;
+  --text-light: #676868;
+  --text-blue: #004a6f;
+
+  --logo-dark: #004a70;
+  --logo-light: #1c9cd9;
+  --icon-blue: #004a6f;
+
+  --back-main: #141414;
+  --back-main: #aaeeff;
+  --back-second: #004a70;
+  --text-title: #222222;
+  --text-block: #555555;
+  --text-title: white;
+  --text-block: white;
+  --icon: #99DDFF;
+  --icon-dark: #1c9cd9;
+  --icon-grey: #82AABB;
+  --icon-text: #141414;
+  --icon-text-grey: #444444;
+}
+
+
+
+//################################################################################
+//## included when feature clrHue is active
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: var(--back-main);
+}
+
+body {
+    background: var(--back-main);
+}
+.background { }
+
+.main-columns {
+    background: var(--back-main);
+}
+
+//################################################################################
+//## presentation login column
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.presentation-login-column {
+}
+
+.logo-row {
+    background: var(--back-second);
+}
+
+.presentation-background-logo {
+    background: var(--back-main);
+}
+
+
+.login-column {
+    background: var(--back-main);
+}
+
+.main-title {
+  color: var(--text-title);
+}
+
+.container-start-button { }
+
+//################################################################################
+//## message column
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.message-column {
+    background: var(--back-second);
+}
+
+//.message-column-header { }
+
+.message-container {
+    background: var(--back-main);
+}
+
+.message-ul {
+    background: none;
+}
+
+.message-li {
+    background: var(--icon);
+}
+
+.message-li-selected {
+    background: var(--icon-dark);
+}
+
+
+//################################################################################
+//## installation page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.installation-background {
+    color: var(--back-main);
+}
+
+.installation-header {
+    color: var(--text-title);
+}
+
+.installation-spinning-icon {
+    //background: var(--back-main);
+    background: none;
+}
+
+.installation-spinning-icon.icon-container {
+    background: none;
+}
+
+.installation-progress {
+
+}
+
+//################################################################################
+//## local container page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.local-container-page.background {
+    background: var(--back-main);
+}
+
+.local-container-page.logo-navbar-row {
+    background: var(--back-main);
+}
+
+.local-container-page.logo-row {
+    background: var(--back-second);
+}
+
+.local-container-page.large-navbar {
+    background: var(--back-second);
+}
+
+.local-container-page.content-area {
+    background: var(--back-main);
+}
+
+.local-container-page.overview-column {
+    background: var(--back-second);
+}
+
+.local-container-page.description-card.container {
+    background: var(--back-main);
+}
+
+.local-container-page.argument-column {
+    background: var(--back-second);
+}
+
+.local-container-page.button-column {
+    background: var(--back-second);
+}
+
+//################################################################################
+//## utilities
+//################################################################################
+
+.unused {
+  background: white;
+}
+
+
+
+.primary-button {
+    color: var(--icon-text);
+    background: var(--icon);
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
+.disabled-button {
+    color: var(--icon-text-grey);
+    background: var(--icon-grey);
+    cursor: not-allowed;
+}
+
+.small-icon {
+    //background: var(--text-block);
+    color: var(--icon);
+    fill: var(--icon);
+}
+
+
+.medium-icon {
+    //background: var(--text-block);
+    color: var(--icon);
+    fill: var(--icon);
+}
+
+.large-icon {
+    //background: var(--text-block);
+    color: var(--icon);
+    fill: var(--icon);
+}
+
+.small-icon.icon-container {
+  background: none;
+  fill: none;
+}
+.medium-icon.icon-container {
+  background: none;
+    fill: none;
+}
+.large-icon.icon-container {
+  background: none;
+  fill: none;
+}
+
+.installation-spinning-icon {
+    color: var(--icon-dark);
+    fill: var(--icon-dark);
+    background: none;
+}
+
+div {
+    border: none;
+}
+
+h1, h2, h3 {
+  color: var(--text-title);
+}
+
+h4, h5, h6, p {
+  color: var(--text-block);
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,215 @@
+
+
+:root {
+  --back-dark: #212221;
+  --back-blue: #1181b2;
+  --back-light: #ddedf4;
+  --nav: #44449b;
+
+  --back-main: #212221;
+  --back-second: #1181b2;
+  --text-title: black;
+  --text-block: black;
+  --icon: #99DDFF;
+  --icon-dark: #77BBDD;
+}
+
+
+
+//################################################################################
+//## included when feature clrHue is active
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: var(--back-dark);
+}
+
+body {
+    background: var(--back-dark);
+}
+.background { }
+
+.main-columns {
+    background: var(--back-dark);
+}
+
+//################################################################################
+//## presentation login column
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.presentation-login-column {
+}
+
+.logo-row {
+    background: var(--nav);
+}
+
+.presentation-background-logo {
+    background: var(--back-dark);
+}
+
+
+.login-column {
+    background: var(--back-blue);
+}
+
+.main-title { }
+
+.container-start-button { }
+
+//################################################################################
+//## message column - buggy, first class is not being applied
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.message-column {
+    background: var(--nav);
+}
+
+.message-column-header { }
+
+.message-container {
+    background: var(--back-dark);
+}
+
+.message-ul {
+    background: none;
+}
+
+.message-li {
+    background: var(--nav);
+}
+
+.message-li-selected {
+    background: var(--nav);
+}
+
+
+div {
+    border: none;
+}
+
+
+//################################################################################
+//## installation page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.installation-background {
+    color: var(--back-dark);
+}
+
+.installation-header {
+    color: blue;
+}
+
+.installation-spinning-icon {
+    background: var(--back-dark);
+}
+
+.installation-progress {
+
+}
+
+//################################################################################
+//## local container page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.local-container-page.background {
+    background: var(--back-dark);
+}
+
+.local-container-page.logo-navbar-row {
+    background: var(--back-dark);
+}
+
+.local-container-page.logo-row {
+    background: var(--nav);
+}
+
+.local-container-page.large-navbar {
+    background: var(--nav);
+}
+
+.local-container-page.content-area {
+    background: var(--back-dark);
+}
+
+.local-container-page.overview-column {
+    background: var(--back-blue);
+}
+
+.local-container-page.description-card.container {
+    background: #111111;
+    color: white;
+}
+
+.local-container-page.argument-column {
+    background: var(--back-blue);
+}
+
+.local-container-page.button-column {
+    background: var(--back-blue);
+}
+
+//################################################################################
+//## utilities
+//################################################################################
+
+
+.unused {
+  background: white;
+}
+
+.primary-button {
+    background: var(--nav);
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
+.disabled-button {
+    background: var(--nav);
+    color: #999;
+    cursor: not-allowed;
+}
+
+.small-icon {
+    background: inherit;
+    color: var(--nav);
+}
+
+
+.medium-icon {
+    background: inherit;
+    color: var(--nav);
+}
+
+.large-icon {
+    background: inherit;
+    color: var(--nav);
+
+
+
+
+
+

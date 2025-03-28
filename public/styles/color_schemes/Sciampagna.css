@@ -1,0 +1,255 @@
+
+
+:root {
+  --back-main: #141824;
+  --back-second: #141824;
+  --accent-one: #ffb600;
+  --accent-two: #0049ff;
+
+  --back-main: #141824;
+  --back-second: #141824;
+  --text-title: #44b7ff;
+  --text-block: #3384ec;
+  --text-block: #77a7dd;
+  --icon: #ffb600;
+  --icon-dark: #cc8400;
+  --icon-grey: #885855;
+  --icon-text: #141414;
+}
+
+//################################################################################
+//## utilities
+//################################################################################
+
+.unused {
+  background: white;
+}
+
+body {
+    background: var(--back-main);
+}
+
+.primary-button {
+    color: var(--icon-text);
+    background: var(--icon);
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
+.disabled-button {
+    color: var(--icon-text-grey);
+    background: var(--icon-grey);
+    cursor: not-allowed;
+}
+
+.small-icon {
+    //background: var(--text-block);
+    color: var(--icon);
+    fill: var(--icon);
+}
+
+
+.medium-icon {
+    //background: var(--text-block);
+    color: var(--icon);
+    fill: var(--icon);
+}
+
+.large-icon {
+    //background: var(--text-block);
+    color: var(--icon);
+    fill: var(--icon);
+}
+
+.small-icon.icon-container {
+  background: none;
+  fill: none;
+}
+.medium-icon.icon-container {
+  background: none;
+    fill: none;
+}
+.large-icon.icon-container {
+  background: none;
+  fill: none;
+}
+
+div {
+    border: none;
+}
+
+h1, h2, h3 {
+  color: var(--text-title);
+}
+
+h4, h5, h6, p {
+  color: var(--text-block);
+}
+
+//################################################################################
+//## installation page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.installation-background {
+    color: var(--back-main);
+}
+
+.installation-header {
+    color: var(--text-title);
+}
+
+.installation-spinning-icon {
+    //background: var(--back-main);
+    background: none;
+}
+
+.installation-spinning-icon.icon-container {
+    background: none;
+}
+
+.installation-progress {
+
+}
+
+//################################################################################
+//## entry page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: var(--back-main);
+}
+
+.background { }
+
+.main-columns {
+    background: var(--back-main);
+}
+
+//################################################################################
+//## presentation login column
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.presentation-login-column {
+}
+
+.logo-row {
+    background: var(--back-second);
+}
+
+.presentation-background-logo {
+    background: var(--back-main);
+}
+
+
+.login-column {
+    background: var(--back-main);
+}
+
+.main-title {
+  color: var(--text-title);
+}
+
+.container-start-button { }
+
+//################################################################################
+//## message column
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.message-column {
+    background: var(--back-second);
+}
+
+//.message-column-header { }
+
+.message-container {
+    background: var(--back-main);
+}
+
+.message-ul {
+    background: none;
+}
+
+.message-li {
+    background: var(--icon);
+}
+
+.message-li-selected {
+    background: var(--icon-dark);
+}
+
+//################################################################################
+//## local container page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.local-container-page.background {
+    background: var(--back-main);
+}
+
+.local-container-page.logo-navbar-row {
+    background: var(--back-main);
+}
+
+.local-container-page.logo-row {
+    background: var(--back-second);
+}
+
+.local-container-page.large-navbar {
+    background: var(--back-second);
+}
+
+.local-container-page.content-area {
+    background: var(--back-main);
+}
+
+.local-container-page.overview-column {
+    background: var(--back-second);
+}
+
+.local-container-page.description-card.container {
+    background: #111111;
+    color: white;
+    border-radius: 6px;
+    border: 2px solid var(--icon);
+}
+
+.local-container-page.argument-column {
+    background: var(--back-second);
+}
+
+.local-container-page.button-column {
+    background: var(--back-second);
+}
+
+
+
+
+
+
+
+
+
+
+
+

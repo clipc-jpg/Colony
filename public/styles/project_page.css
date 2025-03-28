@@ -1,0 +1,391 @@
+
+
+
+
+//################################################################################
+//## resets
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+[contenteditable].project-page:focus {
+    outline: 3px solid #004a50ff;
+}
+
+
+
+
+//################################################################################
+//## background and navbar
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.project-page.background { }
+
+.project-page.logo-navbar-row { }
+
+.project-page.logo-row { }
+
+.project-page.navbar-logo { }
+
+.project-page.large-navbar { }
+
+//################################################################################
+//## content-area
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.project-page.content-area {
+    height: var(--content-area-height);
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-page.widget-store {
+    height: var(--content-area-height);
+    width: 5%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 2rem 2rem;
+
+    background: #4b8a90d5;
+    backdrop-filter: blur(8px);
+}
+
+.project-page.widget-store.opened {
+    width: 15%;
+
+    justify-content: flex-start;
+    gap: 1.5rem;
+
+    padding: 2rem 0.5rem;
+}
+
+.project-page.close-widget-store-icon { }
+
+.project-page.widget-store-icon-area {
+    //min-height: var(--content-area-height);
+    //height: var(--content-area-height);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    //padding: 2rem; 0.25rem;
+}
+
+.project-page.close-widget-store-icon { }
+
+.project-page.project-area {
+    width: calc(75%);
+    height: 100%;
+
+    overflow-y: auto;
+
+    padding: 2rem 2.5rem;
+
+    background: #13666dd5;
+    backdrop-filter: blur(8px);
+}
+
+.project-page.title-area {
+    height: max-content;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-page.title { }
+
+.project-page.import-template-button.primary-button { }
+
+.project-page.project-decription-area {
+    height: max-content;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 2.5rem;
+    padding: 1.5rem 0rem;
+}
+
+.project-page.project-description-title { }
+
+.project-page.project-description-text {
+    min-height: 4rem;
+    height: max-content;
+    width: calc(100% - 16em);
+
+    border: none;
+    border: 2px solid #004a50ff;
+    background-color: unset;
+    background-color: #819ea1d5;
+}
+
+.project-page.customized-area {
+    height: max-content;
+    width: 100%;
+}
+
+.project-page.footer-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 0rem 1.5rem;
+}
+
+.project-page.export-button.primary-button { }
+
+
+
+//################################################################################
+//## widget store
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.project-page.icon-container {
+    border: none;
+    border-radius: 3px;
+
+    padding: 0.3rem;
+}
+
+.project-page.icon-container.selected {
+    background: #33ccff66;
+}
+
+.project-page.delete-element-icon { }
+
+.project-page.delete-element-icon.selected {
+    background: #ff330099;
+}
+
+//################################################################################
+//##  customized area
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+.project-page.widget-container {
+    min-height: 2.5rem;
+}
+
+.project-page.paragraph-container {
+    padding: 0rem 1.5rem;
+}
+
+.project-page.paragraph-text { }
+
+.project-page.ordered-list {
+    list-style: disc outside;
+    padding: 0rem 2.5rem;
+}
+
+.project-page.ordered-list.item-text {
+    min-width: 2.5rem;
+}
+
+.project-page.unordered-list {
+    list-style: disc outside;
+    padding: 0rem 2.5rem;
+}
+
+.project-page.unordered-list.item-text {
+    min-width: 2.5rem;
+}
+
+.project-page.image-widget-container {
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+}
+
+.project-page.image-widget-container.dragged_over {
+    background: #33ccff66;
+}
+
+.project-page.grid { }
+
+.project-page.grid-element { }
+
+.project-page.measurements-widget-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 0rem 1.5rem 0rem 0rem;
+}
+
+.project-page.measurements-widget-icon { }
+
+.project-page.measurements-widget-text {
+    min-width: 2.5rem;
+}
+
+.project-page.analysis-widget-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 0rem 1.5rem 0rem 0rem;
+}
+
+.project-page.analysis-widget-text {
+    min-width: 2.5rem;
+}
+
+.project-page.analysis-widget-icon { }
+
+.project-page.results-widget-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 0rem 1.5rem 0rem 0rem;
+}
+
+.project-page.results-widget-text {
+    min-width: 2.5rem;
+}
+
+.project-page.results-widget-text.no-content {
+    content: 'Add Description';
+    background: grey;
+}
+
+.project-page.results-widget-icon { }
+
+.project-page.placeholder {
+    height: 4rem;
+    width: calc(100% - 3rem);
+    margin: 0.5rem 1.5rem;
+
+    background: #819ea1d5;
+    border: 2px solid #004a50ff;
+    border-radius: 0.5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-page.placeholder-center {
+    color: black;
+}
+
+.project-page.customized-area-bottom-padding {
+    min-height: 2.5rem;
+    width: 100%;
+}
+
+//################################################################################
+//## generally changing element behaviour
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+p.project-page:empty::before {
+  content: 'Add Description';
+  background: grey;
+}
+
+p.project-page:focus::before {
+  content: '';
+}
+
+p.project-page.no-content {
+  content: 'Add Description';
+  background: grey;
+}
+
+p.project-page.focused {
+  content: '';
+}
+
+.project-page.to-be-deleted {
+    background: #ff330099;
+}
+
+//################################################################################
+//## testing
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+
+div.project-page {
+    border: 2px solid purple;
+}
+
+.project-page.paragraph-container.widget-container.debug {
+    background: blue;
+    background-color: blue;
+    border: 2px solid red;
+}
+
+.project-page.paragraph-container.widget-container.debug2 {
+    background: purple;
+    background-color: purple;
+    border: 2px solid red;
+}
+
+.project-page {
+    tabindex: -1;
+}

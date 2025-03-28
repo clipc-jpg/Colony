@@ -1,0 +1,57 @@
+
+
+
+
+//################################################################################
+//## logo-navbar
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.html-wrapper.logo-navbar-row {
+    width: 100%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.html-wrapper.logo-row {
+    width: 60%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    padding: 5px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.html-wrapper.large-navbar {
+    width: 40%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    padding: 5px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+//################################################################################
+//## actual wrapper section
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.html-wrapper.wrapper { }
+
+
+
