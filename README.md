@@ -27,7 +27,7 @@ Many open source solutions exist, but they tend to have other limitations, such 
 - Instability: The Software may work at a specific point in time on a large number of machines, but changes over time create incompatibilities with extensions/workflows written for older versions of the software or the operating system. Identifying and fixing these problems is a major loss of the reasearcher's time.
 - Steep learning curve: There is very many software solutions using many different algorithms and each one of them has to be understood not only in how they work, but also in how they need to be used. This is a major hindrance to adoption of new approaches.
 
-
+Colony tries to prevent these issues by removing as many moving parts as possible - the analysis may be exported into a completely portable repository. We aim to build upon the achieved equivariance of usage and extend automation to more tasks in order to accelerate Research Data Management.
 
 
 
