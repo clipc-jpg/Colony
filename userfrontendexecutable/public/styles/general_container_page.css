@@ -1,0 +1,406 @@
+
+
+
+
+
+
+
+
+//################################################################################
+//## local container page
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.general-container-page.background {
+    height: calc(100dvh +1px);
+    width: 100%;
+    //padding: 0px 5px 5px 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+//################################################################################
+//## logo / navbar row
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.general-container-page.logo-navbar-row {
+    width: 100%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.general-container-page.logo-row {
+    width: 60%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    padding: 0px 12px;
+    gap: 5px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.general-container-page.large-navbar {
+    width: 40%;
+    height: var(--logo-row-height);
+    min-height: var(--min-logo-row-height);
+    padding: 5px 12px;
+    gap: 5px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.general-container-page.back-to-entry-page-button { }
+
+.general-container-page.to-link-button {
+    height: 100%;
+}
+
+
+//################################################################################
+//## content area
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.general-container-page.content-area {
+    width: 100%;
+    //height: 100%;
+    height: calc(var(--content-area-height) - 10px);
+    padding: 0px 5px 5px 5px;
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+
+}
+
+.general-container-page.overview-column {
+    width: 38%;
+    //height: 100%;
+    min-width: 200px;
+    padding: 5px;
+    padding-top: 2.5rem;
+}
+
+.general-container-page.container-app-card.container-app-card-container {
+    padding-left: 1rem;
+}
+
+.general-container-page.description-card {
+    width: 90%;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: auto;
+}
+
+
+.general-container-page.description-card.title {
+    word-break: break-all;
+}
+
+.general-container-page.description-card.labels {
+    word-break: break-word;
+}
+
+.general-container-page.description-card.help-section {
+    word-break: break-word;
+}
+
+.general-container-page.container-app-card.app-list-loading-icon-container.medium-icon.spinning-icon {
+    margin: auto;
+}
+
+//################################################################################
+//## argument column
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.general-container-page.argument-column {
+    width: 38%;
+    //height: 100%;
+    height: unset;
+    min-width: 200px;
+    padding: 5px;
+    padding-top: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    overflow: auto;
+}
+
+.general-container-page.argument-title {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.general-container-page.config-container {
+    width: 90%;
+    padding: 5px;
+    background: red;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+    overflow: auto;
+}
+
+.general-container-page.configure-self-card.csc-container {
+    width: 90%;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    overflow: auto;
+}
+
+.general-container-page.file-input.fpi-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+    //overflow: auto;
+}
+
+.general-container-page.file-input.title { }
+
+.general-container-page.file-input.input-field-container {
+    margin-left: 0.75rem;
+}
+
+.general-container-page.file-input.input-field { }
+
+.general-container-page.file-input.request-file-button.container { }
+
+.general-container-page.file-input.request-file-button.svg { }
+
+.general-container-page.general-input.input-field-container {
+    margin-left: 0.75rem;
+}
+
+.general-container-page.general-input.input-field { }
+
+//################################################################################
+//## button column
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.general-container-page.button-column {
+    width: 24%;
+    height: 100%;
+    min-width: 100px;
+    padding: 5px;
+    padding-top: 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.general-container-page.configure-self-button.primary-button {
+    margin-left: 2rem;
+}
+
+
+//################################################################################
+//## Job Observation Overlay
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.general-container-page.job-observer-overlay {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.75rem;
+
+    z-index: 128;
+    backdrop-filter: blur(8px);
+}
+
+.general-container-page.job-observer-overlay.job-output-widget.job-output-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+
+    min-width: 40ch;
+    width: 60%;
+    //max-width: 60ch;
+    min-height: 10rem;
+    height: 40%;
+    //max-height: 10rem;
+
+    background: white;
+}
+
+.general-container-page.job-observer-overlay.job-output-widget.job-output {
+    color: black;
+    word-wrap: break-word;
+}
+
+.general-container-page.job-observer-button-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    //border: 2px solid pink;
+
+    min-height: 2rem;
+    min-width: 2rem;
+
+    gap: 0.5rem;
+}
+
+.general-container-page.close-observer-overlay-button.primary-button { }
+
+.general-container-page.job-observer-stop-container-button.primary-button { }
+
+.general-container-page.waiting-for-self-configurator-container  {
+    margin: auto;
+}
+
+.general-container-page.running-container-card.job-output-widget.job-output-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+
+    margin: auto;
+
+    min-width: 16ch;
+    width: 16ch;
+    //max-width: 60ch;
+    min-height: 5rem;
+    height: 5rem;
+    //max-height: 10rem;
+
+    background: white;
+}
+
+.general-container-page.running-container-card.job-output-widget.job-output {
+    color: black;
+    word-wrap: break-word;
+}
+
+
+//################################################################################
+//## Terminate Program Overlay
+//################################################################################
+
+.unused {
+    // dioxus bug: first selection after a section divider is not being applied
+    background: white;
+}
+
+.general-container-page.stop-program-overlay {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.75rem;
+
+    z-index: 255;
+    backdrop-filter: blur(8px);
+}
+
+.general-container-page.stop-program-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+
+    gap: 0.5rem;
+
+    min-width: 40ch;
+    width: 60%;
+    //max-width: 60ch;
+    min-height: 10rem;
+    height: 40%;
+    //max-height: 10rem;
+
+    border-radius: 0.5rem;
+
+    background: black;
+}
+
+.general-container-page.stop-program-info {
+    width: 34ch;
+}
+
+.general-container-page.button-alignment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.general-container-page.stop-program-button.primary-button { }
+
+.general-container-page.cancel-stop-program-button.primary-button { }
+

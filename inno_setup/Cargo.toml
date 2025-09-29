@@ -1,0 +1,10 @@
+[package]
+name = "inno_setup"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+
+[build-dependencies]
+static_vcruntime = "2.0"

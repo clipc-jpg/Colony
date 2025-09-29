@@ -1,7 +1,51 @@
-/target
-/dist
-/test/assets
-/target_0
-/public/bootstrap-icons
-/public/bootstrap-icons-1.11.3
-/public/rsx_svgs
+userfrontendexectuable/target
+userfrontendexectuable/dist
+userfrontendexectuable/test
+userfrontendexectuable/target_0
+userfrontendexectuable/public/bootstrap-icons
+userfrontendexectuable/public/bootstrap-icons-1.11.3
+userfrontendexectuable/public/rsx_svgs*
+
+
+
+
+
+
+# Ignore OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Rust
+target/
+**/*.rs.bk
+#Cargo.lock  # only if you're writing a library
+
+# Logs
+logs/
+*.log
+
+# Backup files
+*~
+*.swp
+*.bak
+*.kate-swp
+*.bkp
+
+
+# Large build artifacts
+*.sif
+*.exe
+*.msi
+*.tar
+
+#not meant for redistribution/publication
+deferred_or_rejected/
+
+# not yet ready for redistribution/publication
+hei_colony/
+wsl_pty_process/
+zenodo_colony/

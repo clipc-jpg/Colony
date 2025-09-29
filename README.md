@@ -31,7 +31,38 @@ Many open source solutions exist, but they tend to have other limitations, such 
 Colony tries to prevent these issues by removing as many moving parts as possible - the analysis may be exported into a completely portable repository. We aim to build upon the achieved equivariance of usage and extend automation to more tasks in order to accelerate Research Data Management.
 
 
+# Development
 
+This project is a workspace dedicated to a desktop application written for Windows. It uses WSL under the hood.
+The underlying technology is Dioxus, which is similar to React websites, and uses CSS for styling.
+For Development, you will need to install rust, and with it comes its package manager cargo.
+
+Currently, compilation is done with raw cargo commands.
+The actual desktop application is located in the subdirectory "userfrontendexecutable" and the project inside is called "ColonyLauncher".
+You can run the program with the command
+```bash
+cargo run -p ColonyLauncher --release
+```
+However, you need to manually copy assets to the correct place, in order to be rendered in the GUI (currently, a logo and the background image, which you can find under inno_setup/assets/).
+
+To alleviate the issue, the buildtask-pattern needs to be completed, like the one used in the wf-transcriptomes project.
+
+
+In order to build the installer, you need to install InnoSetup and create a ColonyWSL.tar file and move it into inno_setup/assets.
+You may reuse a ColonyWSL.tar from a previous release. Otherwise:
+- Create a fresh Ubuntu WSL distribution.
+- Export it to a Ubuntu.tar file.
+- Import the Ubuntu.tar file as ColonyWSL
+- Install necessary dependencies. Currently that is simply singularity and in future releases you might need curl amongst others.
+- Export ColonyWSL to inno_setup/assets/ColonyWSL.tar
+
+Now run InnoSetup on the setup_userspace.ini:
+```bash
+cd inno_setup/assets/setup_userspace.ini
+ISCC setup_userspace.ini
+```
+
+This builds the installer at inno_setup/inno_setup_output
 
 
 

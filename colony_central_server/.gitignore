@@ -1,0 +1,33 @@
+
+
+# Ignore OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Rust
+target/
+**/*.rs.bk
+#Cargo.lock  # only if you're writing a library
+
+# Logs
+logs/
+*.log
+
+# Backup files
+*~
+*.swp
+*.bak
+*.kate-swp
+
+
+# Large build artifacts
+*.sif
+*.exe
+*.msi
+*.zip
+*.tar
+*.gz
