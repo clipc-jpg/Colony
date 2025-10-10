@@ -8,7 +8,7 @@ The core functionality of Colony workflows requires no software other than Singu
 Enforcing a two-step procedure, usage of Colony necessarily documents itself. First, the user creates a usage manifest that may come from a container-internal GUI. Then the user is able use both the container and the manifest file to run the workflow.
 Not only does this reduce the need for manual documentation, it unifies the usage of software, and also allows the Colony Launcher GUI to reason about software usage and take automation to the next level.
 
-If you are interested check out Colony's webpage at https://meerkat256.github.io/ColonyWebsite/.  
+If you are interested check out Colony's webpage at https://clipc-jpg.github.io/ColonyWebsite/.  
 If you meet all requirements you may also build the project from source using cargo.
 
 ## Why Colony?
