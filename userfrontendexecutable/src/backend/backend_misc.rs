@@ -13,6 +13,8 @@ use std::io::BufReader;
 use std::str::FromStr;
 use std::sync::Arc;
 use std::sync::Mutex;
+
+use regex::{Regex, Captures};
 use fs_extra::dir::CopyOptions;
 use itertools::Itertools;
 
@@ -35,13 +37,23 @@ pub const CREATE_NO_WINDOW: u32 = 0x08000000;
 //################################################################################
 
 pub fn wslify_windows_path(windows_path: &str) -> String {
-    let result = windows_path.replace("C:\\","/mnt/c/").replace("\\","/");
-    return result;
+    let windows_path_regex = Regex::new(r#"(?<hd>\w):\\(.*)"#).unwrap();
+    let result = windows_path_regex.replace(windows_path, |cpt: &Captures| {
+        let drive = cpt[1].to_ascii_lowercase();
+        let rest = cpt[2].replace("\\", "/");
+        format!("/mnt/{}/{}", &drive, &rest)
+    });
+    return result.into_owned();
 }
 
 pub fn unwslify_wsl_linux_path(wsl_linux_path: &str) -> String {
-    let result = wsl_linux_path.replace("/mnt/c/", "C:\\").replace("/","\\");
-    return result;
+    let wsl_linux_path_regex = Regex::new(r#"/mnt/(?<hd>\w)/(.*)"#).unwrap();
+    let result = wsl_linux_path_regex.replace(wsl_linux_path, |cpt: &Captures| {
+        let drive = cpt[1].to_ascii_uppercase();
+        let rest = cpt[2].replace("/", "\\");
+        format!("{}:\\{}", &drive, &rest)
+    });
+    return result.into_owned();
 }
 
 //################################################################################
