@@ -4,7 +4,7 @@
 
 
 use std::collections::HashMap;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 use dioxus::prelude::*;
 use itertools::Itertools;
@@ -102,12 +102,14 @@ pub fn GeneralContainerPage(app_state: Signal<AppState>, comm_with_backend: Sign
         selected_container().map(|id| {
             workdir_paths().get(&id).cloned().flatten()
         }).flatten()
+          .filter(|p| Path::new(p).is_dir())
     });
 
     let selected_cont_config = use_memo(move || {
         selected_container().map(|id| {
             config_paths().get(&id).cloned().flatten()
         }).flatten()
+          .filter(|p| Path::new(p).is_file())
     });
 
     let mut last_selected_container_dir = use_signal(|| None as Option<PathBuf>);
@@ -537,10 +539,15 @@ pub fn GeneralContainerPage(app_state: Signal<AppState>, comm_with_backend: Sign
 
                     button {
                         class: match (running_job(), selected_app(), selected_cont_workdir(), selected_cont_config()) {
+                            // The button is hidden while a job is running
                             (Some(_), _, _, _) => "general-container-page export-analysis-button primary-button disabled-button hidden",
+                            // The button may be shown, but only if the selected app is named "self-configurator"
                             (None, Some(app), None, _) if app == "self-configurator" => "general-container-page export-analysis-button primary-button disabled-button",
                             (None, Some(app), _, None) if app == "self-configurator" => "general-container-page export-analysis-button primary-button disabled-button",
+                            // The button is only enabled if all information is set correctly
                             (None, Some(app), Some(_workdir), Some(_config_path)) if app == "self-configurator" => "general-container-page export-analysis-button primary-button",
+                            // If the selected app is anything other than "self.configurator", the button is hidden
+                            // also, rust needs a fallback case here
                             _ => "general-container-page export-analysis-button primary-button disabled-button hidden"
                         },
                         onclick: move |_| {
@@ -560,9 +567,15 @@ pub fn GeneralContainerPage(app_state: Signal<AppState>, comm_with_backend: Sign
                         {"Export Analysis"} br {} {"Into Repository"}
                     }
                     button {
-                        class: match running_job() {
-                            Some(_) => "general-container-page start-container-button primary-button disabled-button",
-                            None => "general-container-page start-container-button primary-button",
+                        class: match (running_job(), selected_app(), selected_cont_workdir(), selected_cont_config()) {
+                            // This button is visible at all times
+                            // While a job is running, the button is shown, but disabled
+                            (Some(_), _, _, _) => "general-container-page start-container-button primary-button disabled-button",
+                            // If an app is selected, and not "self-configurator", only the working directory is necessary to enable the button
+                            (None, Some(app), Some(_workdir), _) if app != "self-configurator" => "general-container-page start-container-button primary-button",
+                            // If an app is selected, and it is "self-configurator", both the working directory and the config file need to be present
+                            (None, Some(app), Some(_workdir), Some(_config_path)) if app == "self-configurator" => "general-container-page start-container-button primary-button",
+                            _ => "general-container-page start-container-button primary-button disabled-button"
                         },
                         onclick: move |_| {
                             spawn(async move {
