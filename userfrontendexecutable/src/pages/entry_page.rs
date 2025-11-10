@@ -302,7 +302,7 @@ pub fn EntryPage(app_state: Signal<AppState>, comm_with_backend: Signal<Frontend
                         class: "entry-page add-container-button primary-button",
                         onclick: move |_| async move {
                             println!("Selecting sif file at {:?}", &last_selected_container_dir());
-                            let file = backend::choose_sif_file(&last_selected_container_dir());
+                            let file = backend::choose_sif_file(&last_selected_container_dir()).await;
                             match file {
                                 Some(mut pthbuf) => {
                                     //container_paths.write().push(pthbuf.clone());

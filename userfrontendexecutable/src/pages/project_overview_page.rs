@@ -384,8 +384,10 @@ fn AddContainerButton(containers: Signal<SlotMap<ContainerKey, DummyContainer>>,
     rsx! {
         button {
             class: "project-overview-page add-container-button primary-button",
-            onclick: move |_| {
-                let _file = backend::choose_sif_file(&last_selected_container_dir());
+            onclick: move |_| async move {
+                let last_dir = last_selected_container_dir();
+                // code is misleading; execution will happen in the frontend thread
+                let _file = backend::choose_sif_file(&last_dir).await;
                 //match file {
 //                    Some(mut pthbuf) => {
 //                        container_paths.write().push(pthbuf.clone());

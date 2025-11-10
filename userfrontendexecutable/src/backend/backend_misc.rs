@@ -61,7 +61,7 @@ pub fn unwslify_wsl_linux_path(wsl_linux_path: &str) -> String {
 //################################################################################
 
 #[cfg(not(target_arch = "wasm32"))]
-pub fn choose_sif_file(starting_dir: &Option<PathBuf>) -> Option<PathBuf> {
+pub async fn choose_sif_file(starting_dir: &Option<PathBuf>) -> Option<PathBuf> {
     println!("Choosing sif file");
     let path = match starting_dir {
         Some(ptb) => ptb.clone(),
@@ -69,11 +69,13 @@ pub fn choose_sif_file(starting_dir: &Option<PathBuf>) -> Option<PathBuf> {
     };
 
     println!("Opening file dialog at {:?}",&path);
-    let res = rfd::FileDialog::new()
+    let res = rfd::AsyncFileDialog::new()
                     .set_directory(&path)
                     .add_filter("SIF files", &["sif"])
                     .add_filter("All files", &["*"])
-                    .pick_file();
+                    .pick_file()
+                    .await
+                    .map(|res| res.into());
 
     println!("The user chose: {:#?}", res);
 
@@ -81,16 +83,18 @@ pub fn choose_sif_file(starting_dir: &Option<PathBuf>) -> Option<PathBuf> {
 }
 
 #[cfg(not(target_arch = "wasm32"))]
-pub fn choose_file(starting_dir: &Option<PathBuf>) -> Option<PathBuf> {
+pub async fn choose_file(starting_dir: &Option<PathBuf>) -> Option<PathBuf> {
     let path = match starting_dir {
         Some(ptb) => ptb.clone(),
         None => std::env::current_dir().unwrap()
     };
 
-    let res = rfd::FileDialog::new()
+    let res = rfd::AsyncFileDialog::new()
                         .set_directory(&path)
                         .add_filter("All files", &["*"])
-                        .pick_file();
+                        .pick_file()
+                        .await
+                        .map(|res| res.into());
 
     println!("The user chose: {:#?}", res);
 
@@ -98,16 +102,18 @@ pub fn choose_file(starting_dir: &Option<PathBuf>) -> Option<PathBuf> {
 }
 
 #[cfg(not(target_arch = "wasm32"))]
-pub fn choose_files(starting_dir: &Option<PathBuf>) -> Option<Vec<PathBuf>> {
+pub async fn choose_files(starting_dir: &Option<PathBuf>) -> Option<Vec<PathBuf>> {
     let path = match starting_dir {
         Some(ptb) => ptb.clone(),
         None => std::env::current_dir().unwrap()
     };
 
-    let res = rfd::FileDialog::new()
+    let res = rfd::AsyncFileDialog::new()
                         .set_directory(&path)
                         .add_filter("All files", &["*"])
-                        .pick_files();
+                        .pick_files()
+                        .await
+                        .map(|res_vec| res_vec.iter().map(PathBuf::from).collect_vec());
 
     println!("The user choose: {:#?}", res);
 
@@ -115,31 +121,35 @@ pub fn choose_files(starting_dir: &Option<PathBuf>) -> Option<Vec<PathBuf>> {
 }
 
 #[cfg(not(target_arch = "wasm32"))]
-pub fn choose_directory(starting_dir: &Option<PathBuf>) -> Option<PathBuf> {
+pub async fn choose_directory(starting_dir: &Option<PathBuf>) -> Option<PathBuf> {
     let path = match starting_dir {
         Some(ptb) => ptb.clone(),
         None => std::env::current_dir().unwrap()
     };
 
-    let res = rfd::FileDialog::new()
-    .set_directory(&path)
-    .pick_folder();
-
-    println!("The user choose: {:#?}", res);
-
-    return res;
-}
-
-#[cfg(not(target_arch = "wasm32"))]
-pub fn choose_directories(starting_dir: &Option<PathBuf>) -> Option<Vec<PathBuf>> {
-    let path = match starting_dir {
-        Some(ptb) => ptb.clone(),
-        None => std::env::current_dir().unwrap()
-    };
-
-    let res = rfd::FileDialog::new()
+    let res = rfd::AsyncFileDialog::new()
                         .set_directory(&path)
-                        .pick_folders();
+                        .pick_folder()
+                        .await
+                        .map(|res| res.into());
+
+    println!("The user choose: {:#?}", res);
+
+    return res;
+}
+
+#[cfg(not(target_arch = "wasm32"))]
+pub async fn choose_directories(starting_dir: &Option<PathBuf>) -> Option<Vec<PathBuf>> {
+    let path = match starting_dir {
+        Some(ptb) => ptb.clone(),
+        None => std::env::current_dir().unwrap()
+    };
+
+    let res = rfd::AsyncFileDialog::new()
+                        .set_directory(&path)
+                        .pick_folders()
+                        .await
+                        .map(|res_vec| res_vec.iter().map(PathBuf::from).collect_vec());
 
     println!("The user choose: {:#?}", res);
 

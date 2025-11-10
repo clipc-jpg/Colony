@@ -429,7 +429,7 @@ async fn health_check() -> impl Responder {
 #[get("/choosefile/{request_id}/{filename}")]
 async fn pick_local_file(path: web::Path<(String,String)>) -> impl Responder {
     let (_request_id, _filename) = path.into_inner();
-    let filepath = match backend::choose_file(exe_dir()) {
+    let filepath = match backend::choose_file(exe_dir()).await {
         Some(pth) => wslify_windows_path(&pth.to_string_lossy().to_string()),
         None => "".to_string()
     };
@@ -439,7 +439,7 @@ async fn pick_local_file(path: web::Path<(String,String)>) -> impl Responder {
 #[get("/choosefiles/{request_id}/{filename}")]
 async fn pick_local_files(path: web::Path<(String,String)>) -> impl Responder {
     let (_request_id, _filename) = path.into_inner();
-    let filepaths = match backend::choose_files(exe_dir()) {
+    let filepaths = match backend::choose_files(exe_dir()).await {
         Some(pths) => pths.into_iter().map(|pth| wslify_windows_path(&pth.to_string_lossy().to_string())).collect::<Vec<_>>(),
         None => vec!{"".to_string()}
     };
@@ -449,7 +449,7 @@ async fn pick_local_files(path: web::Path<(String,String)>) -> impl Responder {
 #[get("/choosedirectory/{request_id}/{filename}")]
 async fn pick_local_directory(path: web::Path<(String,String)>) -> impl Responder {
     let (_request_id, _filename) = path.into_inner();
-    let dirpath = match backend::choose_directory(exe_dir()) {
+    let dirpath = match backend::choose_directory(exe_dir()).await {
         Some(pth) => wslify_windows_path(&pth.to_string_lossy().to_string()),
         None => "".to_string()
     };
@@ -460,7 +460,7 @@ async fn pick_local_directory(path: web::Path<(String,String)>) -> impl Responde
 #[get("/choosedirectories/{request_id}/{filename}")]
 async fn pick_local_directories(path: web::Path<(String,String)>) -> impl Responder {
     let (_request_id, _filename) = path.into_inner();
-    let filepaths = match backend::choose_directories(exe_dir()) {
+    let filepaths = match backend::choose_directories(exe_dir()).await {
         Some(pths) => pths.into_iter().map(|pth| wslify_windows_path(&pth.to_string_lossy().to_string())).collect::<Vec<_>>(),
         None => vec!["".to_string()]
     };

@@ -468,7 +468,7 @@ pub fn GeneralContainerPage(app_state: Signal<AppState>, comm_with_backend: Sign
                         onclick: move |_| async move  {
                             //println!("Button clicked!");
                             println!("Selecting sif file at {:?}", &last_selected_container_dir());
-                            let file = crate::backend::choose_sif_file(&last_selected_container_dir());
+                            let file = crate::backend::choose_sif_file(&last_selected_container_dir()).await;
                             match file {
                                 Some(mut pthbuf) => {
                                     page_updates.with_mut(|v| v.push(ContainerPageUpdate::AddContainer(pthbuf.clone())));
