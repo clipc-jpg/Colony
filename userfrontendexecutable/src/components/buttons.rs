@@ -237,11 +237,12 @@ pub fn RequestFilePathButton(class: String, data: Signal<PathBuf>, starting_dir:
                     };
 
                     //TODO using map here is not idiomatic and may be compiled away in release mode
-                    rfd::FileDialog::new()
+                    rfd::AsyncFileDialog::new()
                         .set_directory(&path)
                         .add_filter("All files", &["*"])
                         .pick_file()
-                        .map(|res| data.set(res));
+                        .await
+                        .map(|res| data.set(res.into()));
             },
             svg {
                 width: "16",
@@ -270,10 +271,11 @@ pub fn RequestDirectoryPathButton(class: String, data: Signal<PathBuf>, starting
                     };
 
                     //TODO using map here is not idiomatic and may be compiled away in release mode
-                    rfd::FileDialog::new()
+                    rfd::AsyncFileDialog::new()
                         .set_directory(&path)
                         .pick_folder()
-                        .map(|res| data.set(res));
+                        .await
+                        .map(|res| data.set(res.into()));
             },
             svg {
                 width: "16",
@@ -302,11 +304,12 @@ pub fn RequestFilePathButton2(class: String, starting_dir: Signal<Option<PathBuf
                     };
 
                     //TODO using map here is not idiomatic and may be compiled away in release mode
-                    rfd::FileDialog::new()
+                    rfd::AsyncFileDialog::new()
                         .set_directory(&path)
                         .add_filter("All files", &["*"])
                         .pick_file()
-                        .map(|res| result_handler.call(res));
+                        .await
+                        .map(|res| result_handler.call(res.into()));
             },
             svg {
                 width: "16",
@@ -334,11 +337,15 @@ pub fn RequestDirectoryPathButton2(class: String, starting_dir: Signal<Option<Pa
                         None => std::env::current_dir().unwrap()
                     };
 
+                    //let result_holder = Arc::new(Mutex::new(None as Option<PathBuf>));
+
                     //TODO using map here is not idiomatic and may be compiled away in release mode
-                    rfd::FileDialog::new()
+                    //std::thread::spwawn()
+                    rfd::AsyncFileDialog::new()
                         .set_directory(&path)
                         .pick_folder()
-                        .map(|res| result_handler.call(res));
+                        .await
+                        .map(|res| result_handler.call(res.into()));
             },
             svg {
                 width: "16",
