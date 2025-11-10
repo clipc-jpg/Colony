@@ -161,7 +161,7 @@ pub fn singularity_run(container_path: &PathBuf, container_args: Vec<String>) ->
     println!("Command: /C wsl -d ColonyWSL -e singularity run --bind /mnt:/mnt {:?} {:?}", &pth, &container_args);
     return Command::new("cmd")
     .creation_flags(CREATE_NO_WINDOW)
-    .args(["/C", "wsl -d ColonyWSL -e", "singularity", "run", "--bind", "/mnt:/mnt", &pth])
+    .args(["/C", "wsl -d ColonyWSL -e", "singularity", "run", "--bind", "/mnt:/mnt", "--writable-tmpfs", &pth])
     .args(container_args)
     .arg("2>&1")
     .stdin(std::process::Stdio::piped())
@@ -175,11 +175,12 @@ pub fn singularity_run_in_dir(working_directory: &PathBuf, container_path: &Path
     println!("Working Directory: {}", &work_dir);
     let container_pth = wslify_windows_path(&container_path.to_string_lossy().to_string());
     println!("Container Path: {}", &container_pth);
+
     let mut base_cmd = Command::new("cmd");
     let cmd = base_cmd
     .creation_flags(CREATE_NO_WINDOW)
     .current_dir(&working_directory)
-    .args(["/C", "wsl -d ColonyWSL --shell-type standard", "singularity", "run", "--pwd", &work_dir, "--bind", "/mnt:/mnt", &container_pth])
+    .args(["/C", "wsl -d ColonyWSL --shell-type standard", "singularity", "run", "--pwd", &work_dir, "--bind", "/mnt:/mnt", "--writable-tmpfs", &container_pth])
     .args(container_args)
     //.arg("2>&1")
     .stdin(std::process::Stdio::piped())
@@ -195,7 +196,7 @@ pub fn singularity_run_app(container_path: &PathBuf, app: &str, container_args: 
     let container_pth = wslify_windows_path(&container_path.to_string_lossy().to_string());
     return Command::new("cmd")
     .creation_flags(CREATE_NO_WINDOW)
-    .args(["/C", "wsl -d ColonyWSL -e", "singularity", "run", "--app", &app, &container_pth])
+    .args(["/C", "wsl -d ColonyWSL -e", "singularity", "run", "--writable-tmpfs", "--app", &app, &container_pth])
     .args(container_args)
     //.arg("2>&1")
     .stdin(std::process::Stdio::piped())
@@ -207,10 +208,11 @@ pub fn singularity_run_app(container_path: &PathBuf, app: &str, container_args: 
 pub fn singularity_run_app_in_dir(working_directory: &PathBuf, container_path: &PathBuf, app: &str, container_args: Vec<String>) -> Result<Child,std::io::Error> {
     let wsl_workdir = wslify_windows_path(&working_directory.to_string_lossy().to_string());
     let container_pth = wslify_windows_path(&container_path.to_string_lossy().to_string());
+
     println!("container app workdir: {:?}", &wsl_workdir);
     println!("container path: {:?}", &container_pth);
     println!("container app args: {:?}", &container_args);
-    println!("Command: {:?}", &["--shell-type", "standard", "singularity", "run", "--pwd", &wsl_workdir, "--bind", "/mnt:/mnt", "--app", &app, &container_pth]);
+    println!("Command: {:?}", &["--shell-type", "standard", "singularity", "run", "--pwd", &wsl_workdir, "--bind", "/mnt:/mnt", "--writable-tmpfs", "--app", &app, &container_pth]);
 
     let singularity_cmd = format!(
         r#"wsl -d ColonyWSL -e "singularity run --pwd {} --bind /mnt:/mnt --app {} {} {} 2>&1 | tee raw_output.log""#,
@@ -223,7 +225,7 @@ pub fn singularity_run_app_in_dir(working_directory: &PathBuf, container_path: &
     return Command::new("cmd")
     .creation_flags(CREATE_NO_WINDOW)
     //.args(["/C", &singularity_cmd])
-    .args(["/C", "wsl -d ColonyWSL -e", "singularity", "run", "--pwd", &wsl_workdir, "--bind", "/mnt:/mnt", "--app", &app, &container_pth])
+    .args(["/C", "wsl -d ColonyWSL -e", "singularity", "run", "--pwd", &wsl_workdir, "--bind", "/mnt:/mnt", "--writable-tmpfs", "--app", &app, &container_pth])
     .args(container_args)
     //.arg("2>&1 | tee raw_output.log")
     .stdin(std::process::Stdio::piped())
