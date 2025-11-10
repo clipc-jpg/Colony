@@ -512,6 +512,7 @@ pub fn GeneralContainerPage(app_state: Signal<AppState>, comm_with_backend: Sign
                                     container_path: selected_container_path,
                                     workdir_path: selected_cont_workdir,
                                     configuration_path: selected_cont_config,
+                                    running_job,
                                     webserver_port,
                                     comm_with_backend,
                                     page_updates,
@@ -768,11 +769,12 @@ pub fn ContainerAppCard(class: String, app_state: Signal<AppState>, page_updates
 }
 
 #[component]
-pub fn ConfigureSelfCard(class: String, app_state: Signal<AppState>,
+fn ConfigureSelfCard(class: String, app_state: Signal<AppState>,
                          selected_container: Signal<Option<Uuid>>,
                          container_path: Memo<Option<PathBuf>>,
                          workdir_path: Memo<Option<PathBuf>>,
                          configuration_path: Memo<Option<PathBuf>>,
+                         running_job: Signal<Option<ContainerPageJobState>>,
                          webserver_port: Signal<Option<u16>>,
                          page_updates: Signal<Vec<ContainerPageUpdate>>,
                          comm_with_backend: Signal<FrontendCommChannel>) -> Element {
@@ -783,7 +785,7 @@ pub fn ConfigureSelfCard(class: String, app_state: Signal<AppState>,
     let hidden = if container_path().is_none() { "hidden" } else { "" };
     let mut self_configurator_is_starting = use_signal(|| false);
     let self_config_button_disabled = use_memo(move || {
-        if self_configurator_is_starting() { "disabled" } else { "" }
+        if self_configurator_is_starting() || running_job().is_some() { "disabled-button" } else { "" }
     });
     let waiting_for_self_configurator_hidden = use_memo(move || {
         if self_configurator_is_starting() { "" } else { "hidden" }
